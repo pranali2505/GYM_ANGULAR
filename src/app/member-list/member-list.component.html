@@ -1,0 +1,189 @@
+
+<nav class="navbar">
+  <div class="container">
+    <a routerLink="add-member" routerLinkActive="active">Add Member</a>
+    <a routerLink="/update-member" routerLinkActive="active">Update Member</a>
+    <a routerLink="/member-details" routerLinkActive="active">Member Details</a>
+    <a routerLink="/delete-member" routerLinkActive="active">Delete Member</a>
+  </div>
+</nav>
+<br>
+<br>
+<br>
+
+<!-- <h1>Add Member</h1>
+
+<form (submit)="createMember()">
+  <label for="firstName">First Name:</label>
+  <input type="text" id="firstName" [(ngModel)]="newMember.firstName" name="firstName" required><br><br>
+  
+  <label for="lastName">Last Name:</label>
+  <input type="text" id="lastName" [(ngModel)]="newMember.lastName" name="lastName" required><br><br>
+
+  <label for="email">Email:</label>
+  <input type="email" id="email" [(ngModel)]="newMember.email" name="email" required><br><br>
+
+  <label for="mobileNumber">Mobile Number:</label>
+  <input type="text" id="mobileNumber" [(ngModel)]="newMember.mobileNumber" name="mobileNumber" required><br><br>
+
+  <label for="gender">Gender:</label>
+  <input type="text" id="gender" [(ngModel)]="newMember.gender" name="gender" required><br><br>
+
+  <button type="submit">Add Member</button>
+</form> -->
+<div class="form-container">
+  <h1>Add Member</h1>
+
+  <form (submit)="createMember()" class="member-form">
+    <div class="form-group">
+      <label for="firstName">First Name:</label>
+      <input type="text" id="firstName" [(ngModel)]="newMember.firstName" name="firstName" required>
+    </div>
+  
+    <div class="form-group">
+      <label for="lastName">Last Name:</label>
+      <input type="text" id="lastName" [(ngModel)]="newMember.lastName" name="lastName" required>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" id="email" [(ngModel)]="newMember.email" name="email" required>
+    </div>
+
+    <div class="form-group">
+      <label for="mobileNumber">Mobile Number:</label>
+      <input type="text" id="mobileNumber" [(ngModel)]="newMember.mobileNumber" name="mobileNumber" required>
+    </div>
+
+    <div class="form-group">
+      <label for="gender">Gender:</label>
+      <input type="text" id="gender" [(ngModel)]="newMember.gender" name="gender" required>
+    </div>
+
+    <button type="submit">Add Member</button>
+  </form>
+</div>
+<br>
+<br>
+<br>
+
+<!-- <h1>Member List</h1> -->
+
+<!-- <h2>Update Member</h2>
+<form (submit)="updateMember()">
+  <label for="memberId">Member ID:</label>
+  <input type="text" id="memberId" name="memberId" [(ngModel)]="selectedMemberId" required>
+  <br>
+  <label for="updatedFirstName">Updated First Name:</label>
+  <input type="text" id="updatedFirstName" name="updatedFirstName" [(ngModel)]="updatedMember.firstName" required>
+  <br>
+  <label for="updatedLastName">Updated Last Name:</label>
+  <input type="text" id="updatedLastName" name="updatedLastName" [(ngModel)]="updatedMember.lastName" required>
+  <br>
+  <label for="updatedEmail">Updated Email:</label>
+  <input type="email" id="updatedEmail" name="updatedEmail" [(ngModel)]="updatedMember.email" required>
+  <br>
+  <label for="updatedMobileNumber">Updated Mobile Number:</label>
+  <input type="text" id="updatedMobileNumber" name="updatedMobileNumber" [(ngModel)]="updatedMember.mobileNumber" required>
+  <br>
+  <label for="updatedGender">Updated Gender:</label>
+  <input type="text" id="updatedGender" name="updatedGender" [(ngModel)]="updatedMember.gender" required>
+  <br>
+  <button type="submit">Update Member</button>
+</form> -->
+<!-- Update Member Form -->
+<div class="update-member-form">
+  <h2>Update Member</h2>
+  <form (submit)="updateMember()">
+    <div class="form-group">
+      <label for="memberId">Member ID:</label>
+      <input type="text" id="memberId" name="memberId" [(ngModel)]="selectedMemberId" required>
+    </div>
+    <div class="form-group">
+      <label for="updatedFirstName">Updated First Name:</label>
+      <input type="text" id="updatedFirstName" name="updatedFirstName" [(ngModel)]="updatedMember.firstName" required>
+    </div>
+    <div class="form-group">
+      <label for="updatedLastName">Updated Last Name:</label>
+      <input type="text" id="updatedLastName" name="updatedLastName" [(ngModel)]="updatedMember.lastName" required>
+    </div>
+    <div class="form-group">
+      <label for="updatedEmail">Updated Email:</label>
+      <input type="email" id="updatedEmail" name="updatedEmail" [(ngModel)]="updatedMember.email" required>
+    </div>
+    <div class="form-group">
+      <label for="updatedMobileNumber">Updated Mobile Number:</label>
+      <input type="text" id="updatedMobileNumber" name="updatedMobileNumber" [(ngModel)]="updatedMember.mobileNumber" required>
+    </div>
+    <div class="form-group">
+      <label for="updatedGender">Updated Gender:</label>
+      <input type="text" id="updatedGender" name="updatedGender" [(ngModel)]="updatedMember.gender" required>
+    </div>
+    <button type="submit">Update Member</button>
+  </form>
+</div>
+<br>
+<br>
+<br>
+
+
+
+
+<!-- <h2>Member Details</h2>
+
+<form (submit)="getMemberById(selectedMemberId)">
+  <label for="memberId">Enter Member ID:</label>
+  <input type="number" id="memberId" name="memberId" [(ngModel)]="selectedMemberId" required>
+  <button type="submit">Get Member</button>
+</form>
+
+<div *ngIf="member">
+  <p><strong>Member ID:</strong> {{ member.id }}</p>
+  <p><strong>First Name:</strong> {{ member.firstName }}</p>
+  <p><strong>Last Name:</strong> {{ member.lastName }}</p>
+  <p><strong>Email:</strong> {{ member.email }}</p>
+  <p><strong>Mobile Number:</strong> {{ member.mobileNumber }}</p>
+  <p><strong>Gender:</strong> {{ member.gender }}</p>
+</div>
+ -->
+ <div class="member-details-form">
+  <h2>Member Details</h2>
+  <form (submit)="getMemberById(selectedMemberId)">
+    <div class="form-group">
+      <label for="memberId">Enter Member ID:</label>
+      <input type="number" id="memberId" name="memberId" [(ngModel)]="selectedMemberId" required>
+    </div>
+    <button type="submit">Get Member</button>
+  </form>
+
+  <div class="member-details" *ngIf="member">
+    <p><strong>Member ID:</strong> {{ member.id }}</p>
+    <p><strong>First Name:</strong> {{ member.firstName }}</p>
+    <p><strong>Last Name:</strong> {{ member.lastName }}</p>
+    <p><strong>Email:</strong> {{ member.email }}</p>
+    <p><strong>Mobile Number:</strong> {{ member.mobileNumber }}</p>
+    <p><strong>Gender:</strong> {{ member.gender }}</p>
+  </div>
+</div>
+<br>
+<br>
+<br>
+
+<!-- <h1>Member List</h1>
+ 
+<ul>
+  <li *ngFor="let member of members">
+    {{ member.id }} - {{ member.firstName }} {{ member.lastName }} - {{ member.email }} - {{ member.mobileNumber }} - {{ member.gender }}
+    <button (click)="deleteMember(member.id)">Delete</button>
+  </li>
+</ul> -->
+<div class="member-list-container">
+  <h1>Delete Members/Members List</h1>
+
+  <ul class="member-list">
+    <li *ngFor="let member of members" class="member-item">
+      <span>{{ member.id }} - {{ member.firstName }} {{ member.lastName }} - {{ member.email }} - {{ member.mobileNumber }} - {{ member.gender }}</span>
+      <button (click)="deleteMember(member.id)" class="delete-button">Delete</button>
+    </li>
+  </ul>
+</div>

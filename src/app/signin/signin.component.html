@@ -1,0 +1,14 @@
+<div class="fullscreen-bg">
+  <div class="signin-container">
+    <h2>Log In</h2>
+    <form (ngSubmit)="signIn()">
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" [(ngModel)]="username" required>
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" [(ngModel)]="password" required>
+
+      <button type="submit">Log In</button>
+    </form>
+  </div>
+</div>
